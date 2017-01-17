@@ -31,8 +31,10 @@ const createSchema = (knex, callback) => {
     .then(() => rolePermission.rolePermissionSchema(knex))
     .then(() => {
       logger.info('Database schema have been updated');
-      userSeed.seed();
-      callback();
+      // seed default data
+      userSeed.seed().then(() => {
+        callback();
+      });
       return null;
     })
     .catch((err) => {

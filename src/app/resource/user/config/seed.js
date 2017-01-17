@@ -27,7 +27,6 @@ const seed = () => {
     })
     .then(() => {
       logger.info('seeded for packages user');
-      process.exit(0);
     })
     .catch((e) => {
       logger.log(e);

@@ -1,5 +1,5 @@
 const orm = require('../../../../../conf/config-orm');
-const user = require('./UserModel');
+const user = require('./UserSchema');
 
 const tableName = 'session';
 

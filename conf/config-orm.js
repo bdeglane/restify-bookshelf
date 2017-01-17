@@ -26,7 +26,10 @@ const params = {
   connection: dbConnection
 };
 
+let knex = Knex(params);
+let bookshelf = Bookshelf(knex);
+
 module.exports = {
-  knex: Knex(params),
-  bookshelf: Bookshelf(knex)
+  knex,
+  bookshelf
 };

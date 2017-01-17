@@ -10,7 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bookshelf": "^0.10.2",
     "knex": "^0.12.6",
+    "pg": "^6.1.2",
     "restify": "^4.3.0",
     "winston": "^2.3.0"
   },

@@ -11,5 +11,4 @@ const rolePermissionSchema = (knex) => {
 module.exports = {
   tableName,
   rolePermissionSchema
-}
-;
+};

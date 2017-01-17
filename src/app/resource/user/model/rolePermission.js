@@ -1,11 +1,15 @@
+const tableName = 'role_permission';
+
 const rolePermissionSchema = (knex) => {
   return knex.schema
-    .createTable('role_permission', function (table) {
+    .createTable(tableName, function (table) {
       table.integer('role_id').references('role.id');
       table.integer('permission_id').references('permission.id');
     })
 };
 
 module.exports = {
+  tableName,
   rolePermissionSchema
-};
+}
+;

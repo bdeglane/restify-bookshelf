@@ -19,6 +19,7 @@ const permissionSchema = (knex) => {
 };
 
 module.exports = {
+  tableName,
   PermissionModel,
   permissionSchema
 };

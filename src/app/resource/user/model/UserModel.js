@@ -27,6 +27,7 @@ const userSchema = (knex) => {
 };
 
 module.exports = {
+  tableName,
   UserModel,
   userSchema
 };

@@ -23,6 +23,7 @@ const roleSchema = (knex) => {
 };
 
 module.exports = {
+  tableName,
   RoleModel,
   roleSchema
 };

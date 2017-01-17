@@ -20,6 +20,7 @@ const sessionSchema = (knex) => {
 };
 
 module.exports = {
+  tableName,
   SessionModel,
   sessionSchema
 };

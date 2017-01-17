@@ -1,9 +1,9 @@
-const bookshelf = require('../../../../../conf/config-orm');
+const orm = require('../../../../../conf/config-orm');
 const role = require('./RoleModel');
 
 const tableName = 'permission';
 
-const PermissionModel = bookshelf.Model.extend({
+const PermissionModel = orm.bookshelf.Model.extend({
   tableName: tableName,
   role: function () {
     return this.belongsToMany(role.RoleModel);

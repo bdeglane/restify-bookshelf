@@ -1,10 +1,10 @@
-const bookshelf = require('../../../../../conf/config-orm');
+const orm = require('../../../../../conf/config-orm');
 const user = require('./UserModel');
 const permission = require('./PermissionModel');
 
 const tableName = 'role';
 
-const RoleModel = bookshelf.Model.extend({
+const RoleModel = orm.bookshelf.Model.extend({
   tableName: tableName,
   user: function () {
     return this.hasOne(user.UserModel);

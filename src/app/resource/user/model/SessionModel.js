@@ -1,9 +1,9 @@
-const bookshelf = require('../../../../../conf/config-orm');
+const orm = require('../../../../../conf/config-orm');
 const user = require('./UserModel');
 
 const tableName = 'session';
 
-const SessionModel = bookshelf.Model.extend({
+const SessionModel = orm.bookshelf.Model.extend({
   tableName: tableName,
   user: function () {
     return this.belongsTo(user.UserModel);

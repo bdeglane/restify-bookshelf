@@ -1,12 +1,16 @@
 'use strict';
+const logger = require('winston');
 // import orm
-const orm = require('../../../../../conf/config-orm');
-// import all table
-const user = require('./user/model/UserModel');
-const role = require('./user/model/RoleModel');
-const session = require('./user/model/SessionModel');
-const permission = require('./user/model/PermissionModel');
-const rolePermission = require('./user/model/rolePermission');
+const orm = require('../../../conf/config-orm');
+// import all tables
+const user = require('./user/schema/UserSchema');
+const role = require('./user/schema/RoleSchema');
+const session = require('./user/schema/SessionSchema');
+const permission = require('./user/schema/PermissionSchema');
+const rolePermission = require('./user/schema/rolePermissionSchema');
+
+// import all seed
+const userSeed = require('./user/config/seed');
 
 // export the script to create the the database
 const createSchema = (knex, callback) => {
@@ -16,7 +20,7 @@ const createSchema = (knex, callback) => {
   // drop table user, role, session, permission if exist
     .dropTableIfExists(session.tableName)
     .dropTableIfExists(user.tableName)
-    .dropTableIfExists(role_permission.tableName)
+    .dropTableIfExists(rolePermission.tableName)
     .dropTableIfExists(permission.tableName)
     .dropTableIfExists(role.tableName)
     // then recreate it
@@ -27,6 +31,7 @@ const createSchema = (knex, callback) => {
     .then(() => rolePermission.rolePermissionSchema(knex))
     .then(() => {
       logger.info('Database schema have been updated');
+      userSeed.seed();
       callback();
       return null;
     })

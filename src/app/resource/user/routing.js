@@ -1,6 +1,6 @@
 const debug = require('debug')('src/app/resource/user/routing');
+const controller = require('./controller');
 
-API.get('/hello/:name', (req, res, next) => {
-  res.send('hello ' + req.params.name);
-  return next();
-});
+const PATH = '/hello/:name';
+
+API.get(PATH, controller.getUser);

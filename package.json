@@ -1,5 +1,5 @@
 {
-  "name": "00_test",
+  "name": "restify-bookshelf",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -8,8 +8,8 @@
     "run:dev": "node_modules/.bin/nodemon.cmd main.js",
     "db:create":"node script/database/create.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "bdeglane@users.noreply.github.com",
+  "license": "MIT",
   "dependencies": {
     "bookshelf": "^0.10.2",
     "knex": "^0.12.6",
